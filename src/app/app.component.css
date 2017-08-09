@@ -1,0 +1,31 @@
+.navbar {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 18pt;
+    font-weight: bold;
+    height: 50px;
+    vertical-align: center;
+}
+
+.navbar-title {
+    position: relative;
+    left: 20px;
+    font-size: 30pt;
+    font-weight: bolder;
+}
+
+.content {
+    background-color: lightgrey;
+    position: absolute;
+    align-content: center;
+    text-align: center;
+    padding: 10px;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
