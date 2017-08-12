@@ -12,5 +12,5 @@ export interface Question {
 
 export interface QuestionResponse {
     id: string;
-    bullshit: boolean;
+    answer: boolean;
 }

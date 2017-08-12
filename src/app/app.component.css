@@ -15,6 +15,12 @@
     position: relative;
     left: 20px;
     font-size: 30pt;
+    font-weight: bold;
+}
+
+.navbar-title::after {
+    position: relative; 
+    font-size: 12pt;
     font-weight: bolder;
 }
 

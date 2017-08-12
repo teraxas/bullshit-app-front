@@ -1,8 +1,9 @@
+import {ResultResponse} from '../../model/result';
 import { Component, OnInit } from '@angular/core';
-import { QuestionService } from "../../service/question.service";
-import { Subject, Subscription, Observable } from "rxjs/Rx";
+import { QuestionService } from '../../service/question.service';
+import { Subject, Subscription, Observable } from 'rxjs/Rx';
 
-import { Question } from "../../model/question";
+import { Question } from '../../model/question';
 
 @Component({
   selector: 'app-question',
@@ -17,7 +18,7 @@ export class QuestionComponent implements OnInit {
   question: Question;
   questionLoading = false;
 
-  answerSubject = new Subject<boolean>();
+  result: ResultResponse;
 
   constructor(private questionService: QuestionService) { }
 
@@ -26,14 +27,19 @@ export class QuestionComponent implements OnInit {
       .debounceTime(1000)
       .switchMap(() => {
         this.questionLoading = true;
-        return this.questionService.get()
+        return this.questionService.get();
       });
 
     this.questionObservable.subscribe(
       val => this.question = val,
       null,
       () => this.questionLoading = false
-    )
+    );
+
+    this.questionService.getResult()
+      .subscribe(val => {
+        this.result = val;
+      });
   }
 
   loadQuestion() {
@@ -43,8 +49,9 @@ export class QuestionComponent implements OnInit {
   respondQuestion(bullshit: boolean) {
     this.questionService.respond({
       id: this.question.id,
-      bullshit: bullshit
-    })
+      answer: bullshit
+    });
+    this.question = null;
   }
 
 }
