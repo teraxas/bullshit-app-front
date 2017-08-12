@@ -1,14 +1,49 @@
-<div class="navbar mat-elevation-z6">
-  <div class="navbar-title" >
-    Bullshit!
+<!-- <md-sidenav-container class="sidenav-fab-container">
+  <md-sidenav #sidenav mode="side" opened="true">
+    SIDENAV
+  </md-sidenav>
+  <div class="navbar mat-elevation-z6">
+    <div class="navbar-title">
+      Bullshit!
+    </div>
+    <div class="navbar-button">
+      STATS
+    </div>
+    <div class="navbar-button">
+      ABOUT
+    </div>
   </div>
-  <div class="navbar-button" >
-    STATS
+  <div class="content scrolling-content">
+    <app-question></app-question>
   </div>
-  <div class="navbar-button" >
-    ABOUT
+</md-sidenav-container> -->
+
+<md-sidenav-container fullscreen class="sidenav-fab-container">
+  <md-sidenav #sidenav mode="over" opened="false">
+    <div class="scrolling-content">
+      Lorem ipsum dolor sit amet, pede a libero aenean phasellus, lectus metus sint ut risus,
+      fusce vel in pellentesque. Nisl rutrum etiam morbi consectetuer tempor magna, aenean nullam
+      nunc id, neque vivamus interdum sociis nulla scelerisque sem, dolor id wisi turpis magna
+      aliquam magna. Risus accumsan hac eget etiam donec sed, senectus erat mattis quam, tempor
+      vel urna occaecat cras, metus urna augue nec at. Et morbi amet dui praesent, nec eu at,
+      ligula ipsum dui sollicitudin, quis nisl massa viverra ligula, mauris fermentum orci arcu
+      enim fringilla. Arcu erat nulla in aenean lacinia ullamcorper, urna ante nam et sagittis,
+      tristique vehicula nibh ipsum vivamus, proin proin. Porta commodo nibh quis libero amet.
+      Taciti dui, sapien consectetuer.
+    </div>
+  </md-sidenav>
+  <div class="navbar mat-elevation-z6">
+    <div class="navbar-title">
+      Bullshit!
+    </div>
+    <div class="navbar-button" (click)="sidenav.toggle()">
+      STATS
+    </div>
+    <div class="navbar-button" (click)="sidenav.toggle()">
+      ABOUT
+    </div>
   </div>
-</div>
-<div class="content" >
-  <app-question></app-question>
-</div>
+  <div class="content">
+    <app-question></app-question>
+  </div>
+</md-sidenav-container>

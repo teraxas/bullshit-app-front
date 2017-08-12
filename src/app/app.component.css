@@ -9,6 +9,8 @@
     font-weight: bold;
     height: 50px;
     vertical-align: center;
+    line-height: 45px;
+    text-align: center;
 }
 
 .navbar-title {
@@ -16,6 +18,17 @@
     left: 20px;
     font-size: 30pt;
     font-weight: bold;
+    float: left;
+}
+
+.navbar-button {
+    position: relative;
+    left: 20px;
+    font-size: 12pt;
+    font-weight: bold;
+    float: left;
+    vertical-align: center;
+    padding-left: 15px;
 }
 
 .navbar-title::after {
@@ -34,4 +47,35 @@
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+.sidenav-fab-container {
+    height: 100vh;
+    widows: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.sidenav-fab-container md-sidenav {
+  max-width: 400px;
+}
+
+.sidenav-fab-container .mat-sidenav-content,
+.sidenav-fab-container md-sidenav {
+  display: flex;
+  overflow: visible;
+}
+
+.scrolling-content {
+  /* overflow: auto; */
+  height: 100%;
+  width: 100%;
+}
+
+.fab {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
 }
