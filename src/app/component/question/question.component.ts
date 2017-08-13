@@ -17,6 +17,7 @@ export class QuestionComponent implements OnInit {
   questionSubscription: Subscription;
   question: Question;
   questionLoading = false;
+  noQuestions = false;
 
   result: ResultResponse;
 
@@ -25,15 +26,18 @@ export class QuestionComponent implements OnInit {
   ngOnInit() {
     this.questionObservable = this.questionsSubject
       .debounceTime(1000)
+      // .onErrorResumeNext() // TODO
       .switchMap(() => {
-        this.questionLoading = true;
+        this.noQuestions = false;
         return this.questionService.get();
       });
 
     this.questionObservable.subscribe(
-      val => this.question = val,
-      null,
-      () => this.questionLoading = false
+      val => {
+        this.question = val;
+        this.noQuestions = val ? false : true;
+        this.questionLoading = false;
+      }
     );
 
     this.questionService.getResult()
@@ -43,6 +47,8 @@ export class QuestionComponent implements OnInit {
   }
 
   loadQuestion() {
+    this.questionLoading = true;
+    console.log('questionLoading', this.questionLoading);
     this.questionsSubject.next();
   }
 

@@ -22,6 +22,7 @@
 }
 
 .navbar-button {
+    display: inline-block;
     position: relative;
     left: 20px;
     font-size: 12pt;
@@ -29,6 +30,13 @@
     float: left;
     vertical-align: center;
     padding-left: 15px;
+    transition: all .5s ease;
+}
+
+.navbar-button:hover {
+    font-size: 15pt;
+    font-weight: bolder;
+    cursor: pointer;
 }
 
 .navbar-title::after {
@@ -59,23 +67,39 @@
 }
 
 .sidenav-fab-container md-sidenav {
-  max-width: 400px;
+    background-color: black;
+    color: lightgray;
+    max-width: 400px;
+    width: 300px;
+    padding: 3px 3px 3px 3px;
 }
 
 .sidenav-fab-container .mat-sidenav-content,
 .sidenav-fab-container md-sidenav {
-  display: flex;
-  overflow: visible;
+    display: flex;
+    overflow: visible;
+}
+
+.sidenav-title {
+    padding-top: 10px;
+    font-size: 25pt;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+}
+
+.sidenav-content {
+    padding-top: 10px;
 }
 
 .scrolling-content {
-  /* overflow: auto; */
-  height: 100%;
-  width: 100%;
+    /* overflow: auto; */
+    height: 100%;
+    width: 100%;
 }
 
 .fab {
-  position: absolute;
-  right: 20px;
-  bottom: 10px;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
 }

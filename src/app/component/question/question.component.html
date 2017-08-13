@@ -1,4 +1,4 @@
-<md-card *ngIf="question" class="question-card">
+<md-card *ngIf="question !questionLoading" class="question-card">
   <md-card-header>
     <div md-card-avatar class="poop-image"></div>
     <md-card-title>Is this bullshit?</md-card-title>
@@ -16,6 +16,16 @@
   </md-card-actions>
 </md-card>
 
-<div class="response-buttons" *ngIf="!question">
-    <button *ngIf="!question" md-raised-button type="button" (click)="loadQuestion()">Get bullshit!</button>
+<md-card *ngIf="noQuestions && !questionLoading" class="question-card">
+  <md-card-content>
+    <p>
+      No more bullshit for you :(
+    </p>
+  </md-card-content>
+</md-card>
+
+<div class="get-question-buttons" *ngIf="!question && !questionLoading">
+    <button *ngIf="!question" md-raised-button type="button" (click)="loadQuestion()">{{noQuestions ? 'Check for new bullshit' : 'Get bullshit!'}}</button>
 </div>
+
+<md-spinner *ngIf="questionLoading" style="margin:0 auto;" ></md-spinner>

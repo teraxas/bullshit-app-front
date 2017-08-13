@@ -11,6 +11,7 @@ export class QuestionService {
   private static readonly questionsEndpoint = `${environment.apiUrl}/question`;
   private static readonly questionsGetUrl = `${QuestionService.questionsEndpoint}/get`;
   private static readonly questionsRespondUrl = `${QuestionService.questionsEndpoint}/answer`;
+  private static readonly forgetMeUrl = `${QuestionService.questionsEndpoint}/forgetMe`;
 
   private static readonly requestOptions = new RequestOptions({withCredentials: true });
 
@@ -29,7 +30,9 @@ export class QuestionService {
 
   get(): Observable<Question> {
     return this.http.get(QuestionService.questionsGetUrl, QuestionService.requestOptions)
-      .map(val => val.json() as Question);
+      .map(val => {
+        return val.text() ? val.json() as Question : null;
+      } );
   }
 
   respond(response: QuestionResponse) {
@@ -38,6 +41,10 @@ export class QuestionService {
 
   getResult(): Observable<ResultResponse> {
     return this.resultObservable;
+  }
+
+  forgetResults() {
+    return this.http.delete(QuestionService.forgetMeUrl).subscribe(() => console.log('!!!! session invalidated !!!!'));
   }
 
   private sendResponse(response: QuestionResponse): Observable<ResultResponse> {
