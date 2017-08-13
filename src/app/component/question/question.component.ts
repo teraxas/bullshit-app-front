@@ -43,6 +43,7 @@ export class QuestionComponent implements OnInit {
     this.questionService.getResult()
       .subscribe(val => {
         this.result = val;
+        this.loadQuestion();
       });
   }
 
@@ -57,7 +58,6 @@ export class QuestionComponent implements OnInit {
       id: this.question.id,
       answer: bullshit
     });
-    this.question = null;
   }
 
 }

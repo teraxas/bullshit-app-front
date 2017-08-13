@@ -1,5 +1,23 @@
-<h1 md-dialog-title>Dialog</h1>
-<div md-dialog-content>What would you like to do?</div>
+<h1 md-dialog-title>Add some bullshit!</h1>
+<div md-dialog-content>
+  <form [formGroup]="questionForm">
+    <div class="form-group">
+      <label class="center-block">Question:
+        <input class="form-control" formControlName="question">
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">Explanation:
+        <input class="form-control" formControlName="explanation">
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">Bullshit:
+        <input class="form-control" formControlName="bullshit" type="checkbox" >
+      </label>
+    </div>
+  </form>
+</div>
 <div md-dialog-actions>
   <button md-button md-dialog-close="Option 1">Option 1</button>
   <button md-button md-dialog-close="Option 2">Option 2</button>
