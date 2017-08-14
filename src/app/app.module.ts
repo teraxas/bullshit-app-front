@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchmap';
+import 'rxjs/add/operator/switchMap';
 
 import { BullshitMaterialModule } from './bullshit-material/bullshit-material.module';
 
