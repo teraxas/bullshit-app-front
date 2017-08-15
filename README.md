@@ -7,8 +7,9 @@ After some time rewrote whole thing to use Angular (2+).
 The app is hosted on Heroku: [bullshit-app-api](https://bullshit-app-api.herokuapp.com/)
 
 Spring boot based API: 
- * [bullshit-app-api at heroku](https://bullshit-app-api.herokuapp.com/)
- * [bullshit-app-api at bitbucket](https://bitbucket.org/teraxas/bullshit-app/)
+
+* [bullshit-app-api at heroku](https://bullshit-app-api.herokuapp.com/)
+* [bullshit-app-api at bitbucket](https://bitbucket.org/teraxas/bullshit-app/)
  
 ## Pipelines
 
