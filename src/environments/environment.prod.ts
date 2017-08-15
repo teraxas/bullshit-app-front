@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'TODO' // TODO
+  apiUrl: 'https://bullshit-app-api.herokuapp.com'
 };
