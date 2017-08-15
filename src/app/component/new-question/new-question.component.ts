@@ -9,7 +9,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
   styleUrls: ['./new-question.component.css']
 })
 export class NewQuestionComponent implements OnInit {
-  private questionForm: FormGroup;
+  questionForm: FormGroup;
 
   constructor(public dialogRef: MdDialogRef<NewQuestionComponent>,
     private questionService: QuestionService,
