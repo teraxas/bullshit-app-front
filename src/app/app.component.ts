@@ -1,3 +1,4 @@
+import { environment } from '../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { MdDialog } from '@angular/material';
 import { ResultResponse } from './model/result';
@@ -18,6 +19,8 @@ export class AppComponent implements OnInit {
     private questionService: QuestionService) {}
 
   ngOnInit(): void {
+    this.printInfo();
+
     this.questionService.getResult().subscribe(val => {
       this.curentResult = val;
       if (val.worthyToAddBullshit) {
@@ -36,5 +39,10 @@ export class AppComponent implements OnInit {
 
   forgetMe() {
     this.questionService.forgetResults();
+  }
+
+  private printInfo() {
+    console.log('Bullshit app prod: ' + environment.production);
+    console.log(environment);
   }
 }
