@@ -1,13 +1,14 @@
 import {QuestionEntity} from '../../model/question';
 import {QuestionService} from '../../service/question.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MdDialogRef } from '@angular/material';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-new-question',
   templateUrl: './new-question.component.html',
-  styleUrls: ['./new-question.component.css']
+  styleUrls: ['./new-question.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class NewQuestionComponent implements OnInit {
   questionForm: FormGroup;
@@ -20,7 +21,7 @@ export class NewQuestionComponent implements OnInit {
     this.questionForm = this.createForm();
   }
 
-  submitQuestion() {
+  submitQuestion(form: NgForm) {
     if (!this.questionForm.valid) {
       throw new Error('Form invalid');
     }
@@ -35,7 +36,7 @@ export class NewQuestionComponent implements OnInit {
       bullshit: [''],
       user: this.fb.group({
         name: ['', Validators.required],
-        country: ['', Validators.required]
+        // country: ['', Validators.required]
       })
     });
   }

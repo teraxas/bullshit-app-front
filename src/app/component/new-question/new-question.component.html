@@ -1,36 +1,27 @@
 <h1 md-dialog-title>Add some bullshit!</h1>
-<div md-dialog-content>
-  <form [formGroup]="questionForm" (onSubmit)="submitQuestion()">
-    <div class="form-group">
-      <label class="center-block">Question:
-        <input class="form-control" formControlName="question">
-      </label>
-    </div>
-    <div class="form-group">
-      <label class="center-block">Explanation:
-        <input class="form-control" formControlName="explanation">
-      </label>
-    </div>
-    <div class="form-group">
-      <label class="center-block">Bullshit:
-        <input class="form-control" formControlName="bullshit" type="checkbox" >
-      </label>
+<!-- <div md-dialog-content> -->
+  <form [formGroup]="questionForm" (ngSubmit)="submitQuestion($event)">
+    <md-input-container class="form-group full-width">
+      <input mdInput class="form-control" formControlName="question" placeholder="Question" >
+    </md-input-container>
+    <md-input-container class="form-group full-width">
+        <input mdInput class="form-control" formControlName="explanation" placeholder="Explanation" >
+    </md-input-container>
+    <div class="form-group full-width">
+        <md-checkbox mdInput class="form-control" formControlName="bullshit" placeholder="Bullshit?" type="checkbox" >
+        </md-checkbox>
     </div>
     <div formGroupName="user">
-      <div class="form-group">
-        <label class="center-block">Name:
-        <input class="form-control" formControlName="name">
-      </label>
-      </div>
-      <div class="form-group">
-        <label class="center-block">Country:
-        <input class="form-control" formControlName="country">
-      </label>
-      </div>
+      <md-input-container class="form-group full-width">
+        <input mdInput class="form-control" formControlName="name" placeholder="Name" >
+      </md-input-container>
+      <!-- <md-input-container class="form-group full-width">
+        <input mdInput class="form-control" formControlName="country" placeholder="Country" >
+      </md-input-container> -->
+    </div>
+    <div md-dialog-actions>
+      <button md-raised-button type="submit" [disabled]="questionForm.pristine">Save</button>
+      <button md-raised-button type="button" md-dialog-close="Cancelled">I know nothing</button>
     </div>
   </form>
-</div>
-<div md-dialog-actions>
-  <button md-button type="submit">Submit</button>
-  <button md-button type="button" md-dialog-close="Option 2">I couldn't think of anything :(</button>
-</div>
+<!-- </div> -->

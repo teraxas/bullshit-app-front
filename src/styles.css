@@ -1,3 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@media screen and (max-width: 450) {
+    .md-dialog-container {
+        width: 100%;
+        height: 100%;
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+}
+
+
+.mat-dialog-content {
+    max-height: 90vh !important;
+}
+
+.md-dialog-container {
+    /* width: 100%;
+    height: 100%; */
+    max-width: 100vw;
+    max-height: 100vh;
+}

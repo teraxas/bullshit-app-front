@@ -10,3 +10,7 @@ input[type=checkbox] {
 .form-group {
     padding-top: 5px;
 }
+
+.full-width {
+  width: 100%;
+}

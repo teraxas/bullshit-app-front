@@ -4,7 +4,7 @@ import { MdDialog } from '@angular/material';
 import { ResultResponse } from './model/result';
 import { QuestionService } from './service/question.service';
 import { NewQuestionComponent } from './component/new-question/new-question.component';
-import { MDDefaults } from "./app.defaults";
+import { MDDefaults } from './app.defaults';
 
 @Component({
   selector: 'app-root',
