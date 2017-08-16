@@ -1,3 +1,4 @@
+import {QuestionEntity} from '../../model/question';
 import {QuestionService} from '../../service/question.service';
 import { Component, OnInit } from '@angular/core';
 import { MdDialogRef } from '@angular/material';
@@ -19,11 +20,19 @@ export class NewQuestionComponent implements OnInit {
     this.questionForm = this.createForm();
   }
 
+  submitQuestion() {
+    if (!this.questionForm.valid) {
+      throw new Error('Form invalid');
+    }
+      const entity = this.questionForm.value as QuestionEntity;
+      console.log(entity);
+  }
+
   private createForm(): FormGroup {
     return this.fb.group({
       question: ['', Validators.required],
       explanation: ['', Validators.required],
-      bullshit: ['', Validators.required],
+      bullshit: [''],
       user: this.fb.group({
         name: ['', Validators.required],
         country: ['', Validators.required]

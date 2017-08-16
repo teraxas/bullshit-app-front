@@ -4,6 +4,7 @@ import { MdDialog } from '@angular/material';
 import { ResultResponse } from './model/result';
 import { QuestionService } from './service/question.service';
 import { NewQuestionComponent } from './component/new-question/new-question.component';
+import { MDDefaults } from "./app.defaults";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent implements OnInit {
   curentResult: ResultResponse;
 
   constructor(private dialog: MdDialog,
-    private questionService: QuestionService) {}
+    private questionService: QuestionService) { }
 
   ngOnInit(): void {
     this.printInfo();
@@ -31,7 +32,7 @@ export class AppComponent implements OnInit {
   }
 
   newQuestion() {
-    const dialogRef = this.dialog.open(NewQuestionComponent);
+    const dialogRef = this.dialog.open(NewQuestionComponent, MDDefaults.MD_DIALOG_CFG);
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
     });

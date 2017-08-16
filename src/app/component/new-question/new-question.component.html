@@ -1,6 +1,6 @@
 <h1 md-dialog-title>Add some bullshit!</h1>
 <div md-dialog-content>
-  <form [formGroup]="questionForm">
+  <form [formGroup]="questionForm" (onSubmit)="submitQuestion()">
     <div class="form-group">
       <label class="center-block">Question:
         <input class="form-control" formControlName="question">
@@ -16,9 +16,21 @@
         <input class="form-control" formControlName="bullshit" type="checkbox" >
       </label>
     </div>
+    <div formGroupName="user">
+      <div class="form-group">
+        <label class="center-block">Name:
+        <input class="form-control" formControlName="name">
+      </label>
+      </div>
+      <div class="form-group">
+        <label class="center-block">Country:
+        <input class="form-control" formControlName="country">
+      </label>
+      </div>
+    </div>
   </form>
 </div>
 <div md-dialog-actions>
-  <button md-button md-dialog-close="Option 1">Option 1</button>
-  <button md-button md-dialog-close="Option 2">Option 2</button>
+  <button md-button type="submit">Submit</button>
+  <button md-button type="button" md-dialog-close="Option 2">I couldn't think of anything :(</button>
 </div>
