@@ -43,10 +43,6 @@ export class QuestionService {
     return this.resultObservable;
   }
 
-  forgetResults() {
-    return this.http.delete(QuestionService.forgetMeUrl).subscribe(() => console.log('!!!! session invalidated !!!!'));
-  }
-
   private sendResponse(response: QuestionResponse): Observable<ResultResponse> {
     return this.http.post(QuestionService.questionsRespondUrl, response, QuestionService.requestOptions)
       .map(val => val.json() as ResultResponse);

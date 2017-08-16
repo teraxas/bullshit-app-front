@@ -38,10 +38,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  forgetMe() {
-    this.questionService.forgetResults();
-  }
-
   private printInfo() {
     console.log('Bullshit app prod: ' + environment.production);
     console.log(environment);
