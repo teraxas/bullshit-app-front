@@ -1,8 +1,8 @@
+import { HttpClient, HttpEvent } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { environment } from './../../environments/environment'
-import {RequestOptions, Http} from '@angular/http';
+import { environment } from './../../environments/environment';
 import { Observable } from 'rxjs/Observable';
-import { QuestionResponse, Question } from '../model/question';
+import { QuestionEntity, QuestionResponse,  Question } from '../model/question';
 import { ResultResponse } from '../model/result';
 import { Subject } from 'rxjs/Rx';
 
@@ -11,15 +11,15 @@ export class QuestionService {
   private static readonly questionsEndpoint = `${environment.apiUrl}/question`;
   private static readonly questionsGetUrl = `${QuestionService.questionsEndpoint}/get`;
   private static readonly questionsRespondUrl = `${QuestionService.questionsEndpoint}/answer`;
-  private static readonly forgetMeUrl = `${QuestionService.questionsEndpoint}/forgetMe`;
+  private static readonly createUrl = `${QuestionService.questionsEndpoint}/create`;
 
-  private static readonly requestOptions = new RequestOptions({withCredentials: true });
+  private static readonly requestOptions = {withCredentials: true };
 
   private responseSubject = new Subject<QuestionResponse>();
   private resultObservable: Observable<ResultResponse>;
 
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     this.init();
   }
 
@@ -29,10 +29,11 @@ export class QuestionService {
   }
 
   get(): Observable<Question> {
-    return this.http.get(QuestionService.questionsGetUrl, QuestionService.requestOptions)
-      .map(val => {
-        return val.text() ? val.json() as Question : null;
-      } );
+    return this.http.get<Question>(QuestionService.questionsGetUrl, QuestionService.requestOptions);
+  }
+
+  create(question: QuestionEntity) {
+    return this.http.post(QuestionService.createUrl, question, QuestionService.requestOptions);
   }
 
   respond(response: QuestionResponse) {
@@ -44,8 +45,7 @@ export class QuestionService {
   }
 
   private sendResponse(response: QuestionResponse): Observable<ResultResponse> {
-    return this.http.post(QuestionService.questionsRespondUrl, response, QuestionService.requestOptions)
-      .map(val => val.json() as ResultResponse);
+    return this.http.post<ResultResponse>(QuestionService.questionsRespondUrl, response, QuestionService.requestOptions);
   }
 
 }

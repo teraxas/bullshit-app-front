@@ -1,6 +1,6 @@
 import {QuestionEntity} from '../../model/question';
 import {QuestionService} from '../../service/question.service';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { MdDialogRef } from '@angular/material';
 import { FormBuilder, Validators, FormGroup, NgForm } from '@angular/forms';
 
@@ -11,6 +11,7 @@ import { FormBuilder, Validators, FormGroup, NgForm } from '@angular/forms';
   encapsulation: ViewEncapsulation.None
 })
 export class NewQuestionComponent implements OnInit {
+
   questionForm: FormGroup;
 
   constructor(public dialogRef: MdDialogRef<NewQuestionComponent>,
@@ -26,7 +27,11 @@ export class NewQuestionComponent implements OnInit {
       throw new Error('Form invalid');
     }
       const entity = this.questionForm.value as QuestionEntity;
-      console.log(entity);
+      this.questionService.create(entity)
+        .subscribe(() => {
+          console.log('Successfully saved question: ', entity);
+          this.dialogRef.close('Saved!');
+        });
   }
 
   private createForm(): FormGroup {

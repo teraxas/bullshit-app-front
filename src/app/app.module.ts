@@ -1,4 +1,5 @@
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,7 +17,6 @@ import { StatsComponent } from './component/stats/stats.component';
 import { AboutComponent } from './component/about/about.component';
 
 import { QuestionService } from './service/question.service';
-import { DialogService } from './service/dialog.service';
 
 @NgModule({
   declarations: [
@@ -29,14 +29,13 @@ import { DialogService } from './service/dialog.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule,
+    HttpClientModule,
     ReactiveFormsModule,
 
     BullshitMaterialModule,
   ],
   providers: [
     QuestionService,
-    DialogService
   ],
   entryComponents: [
     NewQuestionComponent
