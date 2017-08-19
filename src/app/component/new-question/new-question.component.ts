@@ -39,7 +39,7 @@ export class NewQuestionComponent implements OnInit {
       question: ['', Validators.required],
       explanation: ['', Validators.required],
       bullshit: [''],
-      user: this.fb.group({
+      creator: this.fb.group({
         name: ['', Validators.required],
         // country: ['', Validators.required]
       })

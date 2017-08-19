@@ -1,4 +1,6 @@
 
+import { User } from './user';
+
 export interface QuestionEntity extends Question {
     explanation?: string;
     bullshit?: boolean;
@@ -7,7 +9,7 @@ export interface QuestionEntity extends Question {
 export interface Question {
     id: string;
     question: string;
-    creator: string;
+    creator: User;
 }
 
 export interface QuestionResponse {
