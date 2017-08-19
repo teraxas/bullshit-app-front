@@ -1,27 +1,25 @@
 <h1 md-dialog-title>Add some bullshit!</h1>
-<!-- <div md-dialog-content> -->
-  <form [formGroup]="questionForm" (ngSubmit)="submitQuestion($event)">
+
+<form [formGroup]="questionForm" [hidden]="saving" (ngSubmit)="submitQuestion($event)">
+  <md-input-container class="form-group full-width">
+    <input mdInput class="form-control" formControlName="question" placeholder="Question">
+  </md-input-container>
+  <md-input-container class="form-group full-width">
+    <input mdInput class="form-control" formControlName="explanation" placeholder="Explanation">
+  </md-input-container>
+  <div class="form-group full-width">
+    <md-checkbox mdInput class="form-control" formControlName="bullshit" placeholder="Bullshit?" type="checkbox">
+    </md-checkbox>
+  </div>
+  <div formGroupName="creator">
     <md-input-container class="form-group full-width">
-      <input mdInput class="form-control" formControlName="question" placeholder="Question" >
+      <input mdInput class="form-control" formControlName="name" placeholder="Name">
     </md-input-container>
-    <md-input-container class="form-group full-width">
-        <input mdInput class="form-control" formControlName="explanation" placeholder="Explanation" >
-    </md-input-container>
-    <div class="form-group full-width">
-        <md-checkbox mdInput class="form-control" formControlName="bullshit" placeholder="Bullshit?" type="checkbox" >
-        </md-checkbox>
-    </div>
-    <div formGroupName="creator">
-      <md-input-container class="form-group full-width">
-        <input mdInput class="form-control" formControlName="name" placeholder="Name" >
-      </md-input-container>
-      <!-- <md-input-container class="form-group full-width">
-        <input mdInput class="form-control" formControlName="country" placeholder="Country" >
-      </md-input-container> -->
-    </div>
-    <div md-dialog-actions>
-      <button md-raised-button type="submit" [disabled]="questionForm.pristine">Save</button>
-      <button md-raised-button type="button" md-dialog-close="Cancelled">I know nothing</button>
-    </div>
-  </form>
-<!-- </div> -->
+  </div>
+  <div md-dialog-actions>
+    <button md-raised-button type="submit" [disabled]="questionForm.pristine">Save</button>
+    <button md-raised-button type="button" md-dialog-close="Cancelled">I know nothing</button>
+  </div>
+</form>
+
+<md-spinner *ngIf="saving" style="margin:0 auto;"></md-spinner>

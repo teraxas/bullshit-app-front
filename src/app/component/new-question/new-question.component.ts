@@ -1,7 +1,7 @@
-import {QuestionEntity} from '../../model/question';
-import {QuestionService} from '../../service/question.service';
+import { QuestionEntity } from '../../model/question';
+import { QuestionService } from '../../service/question.service';
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { MdDialogRef } from '@angular/material';
+import { MdDialogRef, MdSnackBar } from '@angular/material';
 import { FormBuilder, Validators, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
@@ -13,10 +13,14 @@ import { FormBuilder, Validators, FormGroup, NgForm } from '@angular/forms';
 export class NewQuestionComponent implements OnInit {
 
   questionForm: FormGroup;
+  saving = false;
 
-  constructor(public dialogRef: MdDialogRef<NewQuestionComponent>,
+  constructor(
+    public dialogRef: MdDialogRef<NewQuestionComponent>,
     private questionService: QuestionService,
-    private fb: FormBuilder) {}
+    private fb: FormBuilder,
+    private snackBar: MdSnackBar
+  ) { }
 
   ngOnInit() {
     this.questionForm = this.createForm();
@@ -25,13 +29,17 @@ export class NewQuestionComponent implements OnInit {
   submitQuestion(form: NgForm) {
     if (!this.questionForm.valid) {
       throw new Error('Form invalid');
+    } else {
+      this.saving = true;
     }
-      const entity = this.questionForm.value as QuestionEntity;
-      this.questionService.create(entity)
-        .subscribe(() => {
-          console.log('Successfully saved question: ', entity);
-          this.dialogRef.close('Saved!');
-        });
+    const entity = this.questionForm.value as QuestionEntity;
+    this.questionService.create(entity)
+      .subscribe(() => {
+        console.log('Successfully saved question: ', entity);
+        this.dialogRef.close('Saved!');
+        this.saving = false;
+        this.snackBar.open('Question saved!', 'Cool', {duration: 3000});
+      });
   }
 
   private createForm(): FormGroup {
@@ -40,8 +48,7 @@ export class NewQuestionComponent implements OnInit {
       explanation: ['', Validators.required],
       bullshit: [''],
       creator: this.fb.group({
-        name: ['', Validators.required],
-        // country: ['', Validators.required]
+        name: ['', Validators.required]
       })
     });
   }

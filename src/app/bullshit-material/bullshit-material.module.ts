@@ -8,6 +8,7 @@ import {
   MdInputModule,
   MdProgressSpinnerModule,
   MdSidenavModule,
+  MdSnackBarModule,
 } from '@angular/material';
 
 @NgModule({
@@ -19,6 +20,7 @@ import {
     MdInputModule,
     MdProgressSpinnerModule,
     MdSidenavModule,
+    MdSnackBarModule,
   ],
   declarations: []
 })
