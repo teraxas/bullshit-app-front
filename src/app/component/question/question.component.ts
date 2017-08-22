@@ -42,6 +42,7 @@ export class QuestionComponent implements OnInit {
 
     this.questionService.getResult()
       .subscribe(val => {
+        console.log('Result', val);
         this.result = val;
         this.loadQuestion();
       });

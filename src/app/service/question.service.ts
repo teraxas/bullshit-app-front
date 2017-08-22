@@ -25,7 +25,10 @@ export class QuestionService {
 
   init(): void {
     this.resultObservable = this.responseSubject
-      .switchMap(response => response ? this.sendResponse(response) : Observable.of(null));
+      .debounceTime(1000)
+      .distinctUntilChanged((x, y) => x.id === y.id)
+      .switchMap(response => response ? this.sendResponse(response) : Observable.of(null))
+      .share();
   }
 
   get(): Observable<Question> {
@@ -37,6 +40,7 @@ export class QuestionService {
   }
 
   respond(response: QuestionResponse) {
+    console.log('Response: ', response);
     this.responseSubject.next(response);
   }
 
