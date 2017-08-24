@@ -1,5 +1,5 @@
-import {ResultResponse} from '../../model/result';
-import { Component, OnInit } from '@angular/core';
+import { ResultResponse } from '../../model/result';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { QuestionService } from '../../service/question.service';
 import { Subject, Subscription, Observable } from 'rxjs/Rx';
 
@@ -10,11 +10,11 @@ import { Question } from '../../model/question';
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.css']
 })
-export class QuestionComponent implements OnInit {
-
+export class QuestionComponent implements OnInit, OnDestroy {
   questionsSubject = new Subject<any>();
   questionObservable: Observable<Question>;
   questionSubscription: Subscription;
+  resultSubscription: Subscription;
   question: Question;
   questionLoading = false;
   noQuestions = false;
@@ -32,7 +32,7 @@ export class QuestionComponent implements OnInit {
         return this.questionService.get();
       });
 
-    this.questionObservable.subscribe(
+    this.questionSubscription = this.questionObservable.subscribe(
       val => {
         this.question = val;
         this.noQuestions = val ? false : true;
@@ -40,12 +40,17 @@ export class QuestionComponent implements OnInit {
       }
     );
 
-    this.questionService.getResult()
+    this.resultSubscription = this.questionService.getResult()
       .subscribe(val => {
         console.log('Result', val);
         this.result = val;
         this.loadQuestion();
       });
+  }
+
+  ngOnDestroy(): void {
+    this.questionSubscription.unsubscribe();
+    this.resultSubscription.unsubscribe();
   }
 
   loadQuestion() {

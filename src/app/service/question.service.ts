@@ -10,6 +10,7 @@ import { Subject } from 'rxjs/Rx';
 export class QuestionService {
   private static readonly questionsEndpoint = `${environment.apiUrl}/question`;
   private static readonly questionsGetUrl = `${QuestionService.questionsEndpoint}/get`;
+  private static readonly resultGetUrl = `${QuestionService.questionsEndpoint}/currentResult`;
   private static readonly questionsRespondUrl = `${QuestionService.questionsEndpoint}/answer`;
   private static readonly createUrl = `${QuestionService.questionsEndpoint}/create`;
 
@@ -46,6 +47,10 @@ export class QuestionService {
 
   getResult(): Observable<ResultResponse> {
     return this.resultObservable;
+  }
+
+  getCurrentResult(): Observable<ResultResponse> {
+    return this.http.get<ResultResponse>(QuestionService.resultGetUrl, QuestionService.requestOptions);
   }
 
   private sendResponse(response: QuestionResponse): Observable<ResultResponse> {
