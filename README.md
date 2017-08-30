@@ -4,7 +4,7 @@ This is a simple app with facts as questions, either true or bullshit.
 I started it with a target of learning some new stuff about AngularJS and Spring Boot.
 After some time rewrote whole thing to use Angular (2+).
 
-The app is hosted on Heroku: [bullshit-app-api](https://bullshit-app-api.herokuapp.com/)
+The app is hosted on Heroku: [bullshit-app](https://bullshit-app.herokuapp.com/)
 
 Spring boot based API: 
 
@@ -14,6 +14,15 @@ Spring boot based API:
 ## Pipelines
 
 On commit to master, pipelines deploy app automatically to Heroku.
+
+## Docker
+
+Dockerfile allows building and running Docker image of this app.
+To run it, you must have docker installed and use npm scripts sequentially:
+
+* ```dockerBuild``` - builds image
+* ```dockerRun``` - runs image
+* ```dockerKill``` - kills image
 
 ## Angular CLI
 

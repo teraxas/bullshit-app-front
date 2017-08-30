@@ -10,7 +10,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot=false --env=prod -prod"
+    "postinstall": "ng build --aot=false --env=prod -prod",
+    "dockerBuild": "docker build -t bullshit-app-front .",
+    "dockerRun": "docker run -d --name bullshit-app-front -p 8080:80 bullshit-app-front",
+    "dockerKill": "docker container kill bullshit-app-front"
   },
   "private": true,
   "dependencies": {
