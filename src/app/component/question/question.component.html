@@ -2,7 +2,7 @@
   <md-card-header>
     <div md-card-avatar class="poop-image"></div>
     <md-card-title>Is this bullshit?</md-card-title>
-    <md-card-subtitle>{{question?.author}}</md-card-subtitle>
+    <md-card-subtitle>By {{question?.creator?.name}}</md-card-subtitle>
   </md-card-header>
   <!-- <img md-card-image src="assets/img/examples/shiba2.jpg"> -->
   <md-card-content>
@@ -13,6 +13,9 @@
   <md-card-actions>
     <button md-raised-button type="button" (click)="respondQuestion(false)">Truth</button>
     <button md-raised-button type="button" (click)="respondQuestion(true)">Bullshit!</button>
+    <button md-icon-button type="button" (click)="report()">
+      <md-icon md-font-icon="fa-gear" class="fa" aria-label="Report bad item"></md-icon>
+    </button>
   </md-card-actions>
 </md-card>
 

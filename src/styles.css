@@ -22,3 +22,28 @@
     max-width: 100vw;
     max-height: 100vh;
 }
+
+.poop-image {
+    content:url('./favicon.png');
+}
+
+md-icon {
+    padding:40px;
+}
+
+.s64 {
+    font-size:64px;
+}
+
+.s32 {
+    font-size:48px;
+}
+
+md-icon.fa {
+    display:block;
+    padding-left:0px;
+}
+
+md-icon.s32 span {
+    padding-left:8px;
+}
