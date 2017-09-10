@@ -17,6 +17,8 @@ import { StatsComponent } from './component/stats/stats.component';
 import { AboutComponent } from './component/about/about.component';
 
 import { QuestionService } from './service/question.service';
+import { BullshitWordService } from "./service/bullshit-word.service";
+import { AppSetupService } from "./service/app-setup.service";
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { QuestionService } from './service/question.service';
     BullshitMaterialModule,
   ],
   providers: [
+    AppSetupService,
     QuestionService,
+    BullshitWordService
   ],
   entryComponents: [
     NewQuestionComponent

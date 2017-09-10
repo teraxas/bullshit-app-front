@@ -4,6 +4,7 @@ import { QuestionService } from '../../service/question.service';
 import { Subject, Subscription, Observable } from 'rxjs/Rx';
 
 import { Question } from '../../model/question';
+import { BullshitWordService, BSWord } from "../../service/bullshit-word.service";
 
 @Component({
   selector: 'app-question',
@@ -11,6 +12,7 @@ import { Question } from '../../model/question';
   styleUrls: ['./question.component.css']
 })
 export class QuestionComponent implements OnInit, OnDestroy {
+  bullshitWord: BSWord;
   questionsSubject = new Subject<any>();
   questionObservable: Observable<Question>;
   questionSubscription: Subscription;
@@ -21,7 +23,9 @@ export class QuestionComponent implements OnInit, OnDestroy {
 
   result: ResultResponse;
 
-  constructor(private questionService: QuestionService) { }
+  constructor(
+    private questionService: QuestionService,
+    private bullshitWordService: BullshitWordService) { }
 
   ngOnInit() {
     this.questionObservable = this.questionsSubject
@@ -46,6 +50,9 @@ export class QuestionComponent implements OnInit, OnDestroy {
         this.result = val;
         this.loadQuestion();
       });
+
+    this.bullshitWordService.getNextWordObservable().subscribe(val => this.bullshitWord = val);
+    
   }
 
   ngOnDestroy(): void {
@@ -54,9 +61,10 @@ export class QuestionComponent implements OnInit, OnDestroy {
   }
 
   loadQuestion() {
-    this.questionLoading = true;
     console.log('questionLoading', this.questionLoading);
+    this.questionLoading = true;
     this.questionsSubject.next();
+    this.bullshitWordService.nextWord();
   }
 
   respondQuestion(bullshit: boolean) {
@@ -64,6 +72,10 @@ export class QuestionComponent implements OnInit, OnDestroy {
       id: this.question.id,
       answer: bullshit
     });
+  }
+
+  report() {
+    console.log('Reporting question ', this.question);
   }
 
 }

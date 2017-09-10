@@ -1,0 +1,267 @@
+[
+    {
+        "group": "European",
+        "language": "Albanian",
+        "value": "dëngla"
+    },
+    {
+        "group": "European",
+        "language": "Basque",
+        "value": "bullshit"
+    },
+    {
+        "group": "European",
+        "language": "Belarusian",
+        "value": "бздуру"
+    },
+    {
+        "group": "European",
+        "language": "Bosnian",
+        "value": "sranje"
+    },
+    {
+        "group": "European",
+        "language": "Bulgarian",
+        "value": "глупости"
+    },
+    {
+        "group": "European",
+        "language": "Catalan",
+        "value": "merda"
+    },
+    {
+        "group": "European",
+        "language": "Croatian",
+        "value": "sranje"
+    },
+    {
+        "group": "European",
+        "language": "Czech",
+        "value": "hovadina"
+    },
+    {
+        "group": "European",
+        "language": "Estonian",
+        "value": "jamps"
+    },
+    {
+        "group": "European",
+        "language": "Finnish",
+        "value": "paskapuhe"
+    },
+    {
+        "group": "European",
+        "language": "French",
+        "value": "connerie"
+    },
+    {
+        "group": "European",
+        "language": "Galician",
+        "value": "treta"
+    },
+    {
+        "group": "European",
+        "language": "Greek",
+        "value": "μαλακίες"
+    },
+    {
+        "group": "European",
+        "language": "Hungarian",
+        "value": "hülyeség"
+    },
+    {
+        "group": "European",
+        "language": "Icelandic",
+        "value": "kjaftæði"
+    },
+    {
+        "group": "European",
+        "language": "Irish",
+        "value": "bullshit"
+    },
+    {
+        "group": "European",
+        "language": "Italian",
+        "value": "cazzate"
+    },
+    {
+        "group": "European",
+        "language": "Lithuanian",
+        "value": "nesąmonė"
+    },
+    {
+        "group": "European",
+        "language": "Macedonian",
+        "value": "срање"
+    },
+    {
+        "group": "European",
+        "language": "Maltese",
+        "value": "bullshit"
+    },
+    {
+        "group": "European",
+        "language": "Norwegian",
+        "value": "tull"
+    },
+    {
+        "group": "European",
+        "language": "Polish",
+        "value": "głupie gadanie"
+    },
+    {
+        "group": "European",
+        "language": "Portuguese",
+        "value": "besteira"
+    },
+    {
+        "group": "European",
+        "language": "Romanian",
+        "value": "rahat"
+    },
+    {
+        "group": "European",
+        "language": "Russian",
+        "value": "бред"
+    },
+    {
+        "group": "European",
+        "language": "Serbian",
+        "value": "срање"
+    },
+    {
+        "group": "European",
+        "language": "Slovak",
+        "value": "hovadina"
+    },
+    {
+        "group": "European",
+        "language": "Slovenian",
+        "value": "bedarija"
+    },
+    {
+        "group": "European",
+        "language": "Spanish",
+        "value": "mierda"
+    },
+    {
+        "group": "European",
+        "language": "Swedish",
+        "value": "skitsnack"
+    },
+    {
+        "group": "European",
+        "language": "Ukrainian",
+        "value": "фігню"
+    },
+    {
+        "group": "European",
+        "language": "Welsh",
+        "value": "bullshit"
+    },
+    {
+        "group": "European",
+        "language": "Yiddish",
+        "value": "בולשיט"
+    },
+    {
+        "group": "Asian",
+        "language": "Azerbaijani",
+        "value": "pox"
+    },
+    {
+        "group": "Asian",
+        "language": "Bengali",
+        "value": "বাজে কথা"
+    },
+    {
+        "group": "Asian",
+        "language": "Chinese Simplified",
+        "value": "废话"
+    },
+    {
+        "group": "Asian",
+        "language": "Chinese Traditional",
+        "value": "廢話"
+    },
+    {
+        "group": "Asian",
+        "language": "Gujarati",
+        "value": "બુલશીટ"
+    },
+    {
+        "group": "Asian",
+        "language": "Hindi",
+        "value": "बकवास"
+    },
+    {
+        "group": "Asian",
+        "language": "Japanese",
+        "value": "でたらめ"
+    },
+    {
+        "group": "Asian",
+        "language": "Kannada",
+        "value": "ಬುಲ್ಶಿಟ್"
+    },
+    {
+        "group": "Asian",
+        "language": "Kazakh",
+        "value": "туфта"
+    },
+    {
+        "group": "Asian",
+        "language": "Korean",
+        "value": "엉터리"
+    },
+    {
+        "group": "Asian",
+        "language": "Malayalam",
+        "value": "വിസർജ്ജനം"
+    },
+    {
+        "group": "Asian",
+        "language": "Marathi",
+        "value": "पण तथ्य"
+    },
+    {
+        "group": "Asian",
+        "language": "Tajik",
+        "value": "bullshit"
+    },
+    {
+        "group": "Asian",
+        "language": "Tamil",
+        "value": "புல்ஷிட்"
+    },
+    {
+        "group": "Asian",
+        "language": "Telugu",
+        "value": "చెత్త"
+    },
+    {
+        "group": "Asian",
+        "language": "Thai",
+        "value": "พล่าม"
+    },
+    {
+        "group": "Middle-eastern",
+        "language": "Arabic",
+        "value": "هراء"
+    },
+    {
+        "group": "Middle-eastern",
+        "language": "Hebrew",
+        "value": "שְׁטוּיוֹת"
+    },
+    {
+        "group": "Middle-eastern",
+        "language": "Persian",
+        "value": "مزخرف"
+    },
+    {
+        "group": "Middle-eastern",
+        "language": "Turkish",
+        "value": "saçmalık"
+    }
+]

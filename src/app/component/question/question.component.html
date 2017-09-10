@@ -12,11 +12,14 @@
   </md-card-content>
   <md-card-actions>
     <button md-raised-button type="button" (click)="respondQuestion(false)">Truth</button>
-    <button md-raised-button type="button" (click)="respondQuestion(true)">Bullshit!</button>
+    <button md-raised-button type="button" (click)="respondQuestion(true)">{{bullshitWord ? bullshitWord.value : 'Bullshit'}}</button>
     <button md-icon-button type="button" (click)="report()">
-      <md-icon md-font-icon="fa-gear" class="fa" aria-label="Report bad item"></md-icon>
+      <md-icon fontSet="fontawesome" fontIcon="fa-plus" aria-label="Report bad item"></md-icon>
     </button>
   </md-card-actions>
+  <md-card-footer *ngIf="bullshitWord" class="bs-footer" >
+    {{bullshitWord.value}} is {{bullshitWord.language}} for "bullshit"
+  </md-card-footer>
 </md-card>
 
 <md-card *ngIf="noQuestions && !questionLoading" class="question-card">

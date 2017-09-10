@@ -7,3 +7,8 @@
 .get-question-buttons {
     margin-top: 15px;
 }
+
+.bs-footer {
+    font-style: italic;
+    font-size: 13px;
+}

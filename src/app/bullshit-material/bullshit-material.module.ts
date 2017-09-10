@@ -10,6 +10,7 @@ import {
   MdSidenavModule,
   MdSnackBarModule,
   MdTooltipModule,
+  MdIconRegistry,
 } from '@angular/material';
 
 @NgModule({
@@ -26,4 +27,5 @@ import {
   ],
   declarations: []
 })
-export class BullshitMaterialModule { }
+export class BullshitMaterialModule {
+}
