@@ -4,14 +4,18 @@ const app = express();
 // in the dist directory
 app.use(express.static(__dirname + '/dist'));
 
-app.use((req, res, next) => {
-    if (req.header['x-forwarded-proto'] !== 'https') {
-        res.redirect(`https://${req.header('host')}${req.url}`);
-    } else {
-        next();
+const forceSSL = function () {
+  return function (req, res, next) {
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+      return res.redirect(
+        ['https://', req.get('Host'), req.url].join('')
+      );
     }
-  });
+    next();
+  }
+}
 
+app.use(forceSSL());
 
 // Start the app by listening on the default
 // Heroku port
