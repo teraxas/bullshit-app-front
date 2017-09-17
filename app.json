@@ -1,0 +1,11 @@
+{
+    "name": "Bullshit App",
+    "description": "An Angular bullshit facts app",
+    "repository": "https://bitbucket.org/teraxas/bullshit-app-frontend-v2",
+    "logo": "https://bullshit-app.herokuapp.com/favicon.png",
+    "keywords": [
+        "bullshit",
+        "angular",
+        "node"
+    ]
+}
