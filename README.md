@@ -11,11 +11,10 @@ Spring boot based API:
 * [bullshit-app-api at heroku](https://bullshit-app-api.herokuapp.com/)
 * [bullshit-app-api at bitbucket](https://bitbucket.org/teraxas/bullshit-app/)
 
-## Deploy straight to your own Heroku
-
-Heroku allows doing one-click deploys, so here's a button to get your own Bullshit app up and running there:
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[//]: # FIXME : This can only work on Github - Bitbucket not supported :(
+[//]: # ## Deploy straight to your own Heroku
+[//]: # Heroku allows doing one-click deploys, so here's a button to get your own Bullshit app up and running there:
+[//]: # [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
  
 ## Pipelines
 
