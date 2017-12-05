@@ -72,7 +72,7 @@
     bottom: 0;
 }
 
-.sidenav-fab-container md-sidenav {
+.sidenav-fab-container mat-sidenav {
     background-color: black;
     color: lightgray;
     max-width: 80vw;
@@ -81,7 +81,7 @@
 }
 
 .sidenav-fab-container .mat-sidenav-content,
-.sidenav-fab-container md-sidenav {
+.sidenav-fab-container mat-sidenav {
     display: flex;
     overflow: visible;
 }

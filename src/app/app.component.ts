@@ -1,6 +1,6 @@
 import { environment } from '../environments/environment';
 import { Component, OnInit } from '@angular/core';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { ResultResponse } from './model/result';
 import { QuestionService } from './service/question.service';
 import { NewQuestionComponent } from './component/new-question/new-question.component';
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   sidenavView: String;
   curentResult: ResultResponse;
 
-  constructor(private dialog: MdDialog,
+  constructor(private dialog: MatDialog,
     private questionService: QuestionService) { }
 
   ngOnInit(): void {

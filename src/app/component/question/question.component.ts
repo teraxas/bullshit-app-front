@@ -4,7 +4,7 @@ import { QuestionService } from '../../service/question.service';
 import { Subject, Subscription, Observable } from 'rxjs/Rx';
 
 import { Question } from '../../model/question';
-import { BullshitWordService, BSWord } from "../../service/bullshit-word.service";
+import { BullshitWordService, BSWord } from '../../service/bullshit-word.service';
 
 @Component({
   selector: 'app-question',

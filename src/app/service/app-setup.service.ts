@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { MdIconRegistry } from "@angular/material";
+import { MatIconRegistry } from '@angular/material';
 
 @Injectable()
 export class AppSetupService {
 
-  constructor(private mdIconRegistry: MdIconRegistry) {
+  constructor(private mdIconRegistry: MatIconRegistry) {
     this.mdIconRegistry.registerFontClassAlias('fontawesome', 'fa');
   }
 

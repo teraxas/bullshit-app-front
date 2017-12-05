@@ -1,26 +1,26 @@
-<h1 md-dialog-title>Add some bullshit!</h1>
+<h1 mat-dialog-title>Add some bullshit!</h1>
 
 <form [formGroup]="questionForm" [hidden]="saving" (ngSubmit)="submitQuestion($event)">
-  <md-input-container class="form-group full-width">
+  <mat-input-container class="form-group full-width">
     <input mdInput class="form-control" formControlName="question" placeholder="Question">
-  </md-input-container>
-  <md-input-container class="form-group full-width">
+  </mat-input-container>
+  <mat-input-container class="form-group full-width">
     <input mdInput class="form-control" formControlName="explanation" placeholder="Explanation">
-  </md-input-container>
+  </mat-input-container>
   <div class="form-group full-width">
     Bullshit?
-    <md-checkbox mdInput class="form-control" formControlName="bullshit" placeholder="Bullshit?" type="checkbox">
-    </md-checkbox>
+    <mat-checkbox mdInput class="form-control" formControlName="bullshit" placeholder="Bullshit?" type="checkbox">
+    </mat-checkbox>
   </div>
   <div formGroupName="creator">
-    <md-input-container class="form-group full-width">
+    <mat-input-container class="form-group full-width">
       <input mdInput class="form-control" formControlName="name" placeholder="Name">
-    </md-input-container>
+    </mat-input-container>
   </div>
-  <div md-dialog-actions>
-    <button md-raised-button type="submit" [disabled]="questionForm.pristine">Save</button>
-    <button md-raised-button type="button" md-dialog-close="Cancelled">I know nothing</button>
+  <div mat-dialog-actions>
+    <button mat-raised-button type="submit" [disabled]="questionForm.pristine">Save</button>
+    <button mat-raised-button type="button" mat-dialog-close="Cancelled">I know nothing</button>
   </div>
 </form>
 
-<md-spinner *ngIf="saving" style="margin:0 auto;"></md-spinner>
+<mat-spinner *ngIf="saving" style="margin:0 auto;"></mat-spinner>

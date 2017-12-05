@@ -1,5 +1,5 @@
-<md-sidenav-container fullscreen class="sidenav-fab-container">
-  <md-sidenav #sidenav mode="push" opened="false">
+<mat-sidenav-container fullscreen class="sidenav-fab-container">
+  <mat-sidenav #sidenav mode="push" opened="false">
     <div>
       <div class="sidenav-title">
         {{sidenavView}}
@@ -9,7 +9,7 @@
         <app-stats *ngSwitchCase="'STATS'"></app-stats>
       </div>
     </div>
-  </md-sidenav>
+  </mat-sidenav>
   <div class="navbar mat-elevation-z6">
     <div class="navbar-title">
       Bullshit!
@@ -24,4 +24,4 @@
   <div class="content">
     <app-question></app-question>
   </div>
-</md-sidenav-container>
+</mat-sidenav-container>

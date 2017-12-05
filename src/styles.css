@@ -2,8 +2,9 @@
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+
 @media screen and (max-width: 450) {
-    .md-dialog-container {
+    .mat-dialog-container {
         width: 100%;
         height: 100%;
         max-width: 100vw;
@@ -16,7 +17,7 @@
     max-height: 90vh !important;
 }
 
-.md-dialog-container {
+.mat-dialog-container {
     /* width: 100%;
     height: 100%; */
     max-width: 100vw;
@@ -27,7 +28,7 @@
     content:url('./favicon.png');
 }
 
-md-icon {
+mat-icon {
     padding:40px;
 }
 
@@ -39,11 +40,11 @@ md-icon {
     font-size:48px;
 }
 
-md-icon.fa {
+mat-icon.fa {
     display:block;
     padding-left:0px;
 }
 
-md-icon.s32 span {
+mat-icon.s32 span {
     padding-left:8px;
 }

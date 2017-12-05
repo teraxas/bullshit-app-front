@@ -1,7 +1,7 @@
 import { QuestionEntity } from '../../model/question';
 import { QuestionService } from '../../service/question.service';
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { MdDialogRef, MdSnackBar } from '@angular/material';
+import { MatDialogRef, MatSnackBar } from '@angular/material';
 import { FormBuilder, Validators, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
@@ -16,10 +16,10 @@ export class NewQuestionComponent implements OnInit {
   saving = false;
 
   constructor(
-    public dialogRef: MdDialogRef<NewQuestionComponent>,
+    public dialogRef: MatDialogRef<NewQuestionComponent>,
     private questionService: QuestionService,
     private fb: FormBuilder,
-    private snackBar: MdSnackBar
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
