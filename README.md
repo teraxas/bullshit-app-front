@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/teraxas/bullshit-app-front.svg?branch=master)](https://travis-ci.org/teraxas/bullshit-app-front)
-[![Heroku](https://heroku-badge.herokuapp.com/?app=bullshit-app)]
+[![Heroku](https://heroku-badge.herokuapp.com/?app=bullshit-app)](https://bullshit-app.herokuapp.com/)
 
 # IT'S NOT CRAP. IT'S BULLSHIT! #
 
