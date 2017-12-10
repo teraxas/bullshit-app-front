@@ -1,7 +1,7 @@
 {
     "name": "Bullshit App",
     "description": "An Angular bullshit facts app",
-    "repository": "https://bitbucket.org/teraxas/bullshit-app-frontend-v2",
+    "repository": "https://github.com/teraxas/bullshit-app-front",
     "logo": "https://bullshit-app.herokuapp.com/favicon.png",
     "keywords": [
         "bullshit",
