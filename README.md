@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/teraxas/bullshit-app-front.svg?branch=master)](https://travis-ci.org/teraxas/bullshit-app-front)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=bullshit-app)]
+
 # IT'S NOT CRAP. IT'S BULLSHIT! #
 
 This is a simple app with facts as questions, either true or bullshit. 
