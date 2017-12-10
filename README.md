@@ -1,8 +1,6 @@
 [![Build Status](https://travis-ci.org/teraxas/bullshit-app-front.svg?branch=master)](https://travis-ci.org/teraxas/bullshit-app-front)
 [![Heroku](https://heroku-badge.herokuapp.com/?app=bullshit-app)](https://bullshit-app.herokuapp.com/)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
 # IT'S NOT CRAP. IT'S BULLSHIT! #
 
 This is a simple app with facts as questions, either true or bullshit. 
@@ -16,9 +14,12 @@ Spring boot based API:
 * [bullshit-app-api at heroku](https://bullshit-app-api.herokuapp.com/)
 * [bullshit-app-api at bitbucket](https://bitbucket.org/teraxas/bullshit-app/)
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Pipelines
 
-On commit to master, pipelines deploy app automatically to Heroku.
+On commit to master, travic-ci runs.
+After successful run, Heroku pipeline deploys app automatically to staging.
 
 ## Docker
 
